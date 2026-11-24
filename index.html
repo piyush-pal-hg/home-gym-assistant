@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Home Gym Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Home Gym <span>Assistant</span></h1>
+<p>No gym. No dumbbells. Just your bodyweight: slim body, abs, broad shoulders and a sharp jawline.</p>
+</header>
+<nav id="tabs">
+<button data-t="plan" class="on">Daily plan</button>
+<button data-t="week">Weekly split</button>
+<button data-t="ex">Exercises</button>
+<button data-t="face">Face &amp; jaw</button>
+<button data-t="prog">Progress</button>
+<button data-t="tips">Tips</button>
+</nav>
+<main>
+
+<section id="plan" class="on">
+<h2>Your college-day routine</h2>
+<p class="mut">Built around college 8:30 AM to 6:00 PM and a 30-minute commute each way.</p>
+<div class="card"><div class="tl">
+<b>6:00 AM</b><span>Wake up, water, wash face</span>
+<b>6:15 AM</b><span>Morning workout, 30 min (shoulders + abs, see weekly split)</span>
+<b>6:50 AM</b><span>Shower, breakfast with protein (eggs, curd, paneer, sprouts)</span>
+<b>8:00 AM</b><span>Leave home</span>
+<b>8:00–8:30</b><span>Commute: sit tall, chin tucked, tongue on the roof of the mouth, 10 shoulder rolls</span>
+<b>8:30–6:00</b><span>College. Every hour: stand up, 10 squats or a 30 sec wall posture stretch if you can</span>
+<b>6:00–6:30 PM</b><span>Commute home, light snack and water</span>
+<b>7:00 PM</b><span>Evening workout, 30–40 min (main session)</span>
+<b>8:15 PM</b><span>Dinner: high protein, not too heavy</span>
+<b>9:30 PM</b><span>Face &amp; jaw routine, 8 min, then stretch 5 min</span>
+<b>10:30 PM</b><span>Sleep. Muscles and fat loss both need 7–8 hours.</span>
+</div></div>
+<div class="note">Short on time on a busy day? Do only the evening session. Skipping a day is fine; skipping the whole week is the real problem.</div>
+</section>
+
+<section id="week">
+<h2>Weekly split</h2>
+<p class="mut">Mornings are short (about 30 min). Evenings are the main session. Rest between sets: 45 sec. Tick the box on the Exercises tab to track yourself today.</p>
+<div class="card">
+<div class="day"><div><h3>Monday</h3><span class="mut">AM: Abs circuit · PM: Shoulders + chest</span></div><span class="tag">Upper</span></div>
+<div class="day"><div><h3>Tuesday</h3><span class="mut">AM: Brisk walk / skipping 20 min · PM: Core + legs</span></div><span class="tag">Fat burn</span></div>
+<div class="day"><div><h3>Wednesday</h3><span class="mut">AM: Shoulder warm-up · PM: Pike push-ups, push-ups, dips</span></div><span class="tag">Upper</span></div>
+<div class="day"><div><h3>Thursday</h3><span class="mut">AM: Abs circuit · PM: Legs + mountain climbers</span></div><span class="tag">Fat burn</span></div>
+<div class="day"><div><h3>Friday</h3><span class="mut">AM: Plank holds · PM: Shoulders + chest + abs</span></div><span class="tag">Upper</span></div>
+<div class="day"><div><h3>Saturday</h3><span class="mut">Full-body circuit, 3 rounds, 40 min</span></div><span class="tag">Full body</span></div>
+<div class="day"><div><h3>Sunday</h3><span class="mut">Rest. Stretching, long walk, prep meals.</span></div><span class="tag">Rest</span></div>
+</div>
+<h2>Sample sessions</h2>
+<div class="card"><h3>Abs circuit (AM, 3 rounds)</h3><ul><li>Bicycle crunch 20</li><li>Leg raise 12</li><li>Plank 30–45 sec</li><li>Mountain climber 30 sec</li></ul></div>
+<div class="card"><h3>Shoulders + chest (PM, 4 rounds)</h3><ul><li>Pike push-up 8–12</li><li>Push-up 10–20</li><li>Wide push-up 10</li><li>Plank shoulder tap 20</li><li>Chair or bed-edge dips 12</li></ul></div>
+<div class="note">Progress every 1–2 weeks: add 2 reps, slow down the lowering phase to 3 seconds, or add a round.</div>
+</section>
+
+<section id="ex">
+<h2>Exercises</h2>
+<p class="mut">Animated guides show the two key positions. Tap “Watch video” for a full demo.</p>
+<div class="grid" id="exgrid"></div>
+</section>
+
+<section id="face">
+<h2>Face &amp; jaw routine</h2>
+<p class="mut">8 minutes before bed. Tick what you finished today.</p>
+<div class="card" id="facelist"></div>
+<div class="note">Honest note: you can’t burn fat from your face alone. A slimmer jawline mainly comes from losing overall body fat (food + workouts + sleep). These exercises improve posture, neck and jaw muscle tone, which makes your face look sharper.</div>
+</section>
+
+<section id="prog">
+<h2>Your progress</h2>
+<p class="mut" id="sync">Saved on this device only</p>
+<div class="g3">
+<div class="card"><div class="mut">Today</div><h3 id="pt">0%</h3></div>
+<div class="card"><div class="mut">Streak</div><h3 id="ps">0</h3></div>
+<div class="card"><div class="mut">Active days</div><h3 id="pa">0</h3></div>
+</div>
+<div class="card"><h3>Last 14 days</h3><p class="mut">Taller bar = more exercises ticked that day.</p><div id="bars"></div></div>
+<div class="card"><h3>Body log</h3><p class="mut">Log once a week: weight (kg) and waist (cm).</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><input class="in" id="bw" type="number" step="0.1" placeholder="Weight kg"><input class="in" id="bc" type="number" step="0.1" placeholder="Waist cm"><button class="pri" id="bs">Save</button></div>
+<div id="blog" style="margin-top:10px"></div></div>
+<div class="note"><b>On your phone:</b> open this page’s link on your phone, sign in to claude.ai, and use your browser menu → “Add to Home Screen”. Your ticks and body log then sync to your account across phone and laptop.</div>
+</section>
+
+<section id="tips">
+<h2>Tips for a slim, broad-shoulder look</h2>
+<div class="card"><ul>
+<li><b>Broad shoulders:</b> pike push-ups, wide push-ups and shoulder taps build the shoulder caps. Slim waist plus wider shoulders gives the V-shape.</li>
+<li><b>Visible abs:</b> abs show when body fat is low. Train core 4 times a week, but fix food first.</li>
+<li><b>Food:</b> protein at every meal, lots of water, fewer sugary drinks and fried snacks. Don’t starve.</li>
+<li><b>Sleep:</b> 7–8 hours. Poor sleep adds belly and face puffiness.</li>
+<li><b>Posture:</b> shoulders back, chin slightly tucked, while sitting in college and travelling.</li>
+<li><b>Be patient:</b> real change takes 8–12 weeks of consistency. Take a front and side photo every 2 weeks.</li>
+</ul></div>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
